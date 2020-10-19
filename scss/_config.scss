@@ -1,0 +1,26 @@
+$primary-color: #061d2c;
+$secondary-color: #fad02c;
+$main-font: "Roboto", sans-serif;
+$show-home-image: true;
+$home-image: url(../img/background.jpg) no-repeat center center/cover;
+$background-opacity: 0.9;
+
+@mixin transition($time: 0.4s) {
+  transition: all $time ease-out;
+}
+
+@mixin background {
+  @if $show-home-image {
+    &#bg-image {
+      background: $home-image;
+    }
+  }
+}
+
+.lg-heading {
+  font-size: 4rem;
+}
+
+.sm-heading {
+  font-size: 1.2rem;
+}
