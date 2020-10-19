@@ -1,0 +1,37 @@
+// Button
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include transition(0.5s);
+
+  .btn-line {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 0 0 0.4rem 0;
+    @include transition(0.5s);
+  }
+
+  // Rotate into close position
+  &.close {
+    transform: rotate(180deg);
+    @include transition;
+
+    .btn-line {
+      width: 27px;
+
+      &:nth-child(1) {
+        transform: translateY(0.6rem) rotate(45deg);
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
