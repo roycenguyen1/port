@@ -7,7 +7,7 @@
 
 body {
   @include background;
-  color: #fff;
+  color: main-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: $main-font;
@@ -43,11 +43,11 @@ h3 {
 }
 
 .text-secondary {
-  color: $secondary-color;
+  color: secondary-text-color($primary-color);
 }
 
 a {
-  color: #fff;
+  color: main-text-color($primary-color);
   text-decoration: none;
 }
 
@@ -71,7 +71,7 @@ main {
       padding: 0 0.5rem;
 
       &:hover {
-        color: $secondary-color;
+        color: secondary-text-color($primary-color);
         @include transition(0.7s);
       }
     }

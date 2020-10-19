@@ -10,7 +10,7 @@
   .btn-line {
     width: 25px;
     height: 3px;
-    background: #fff;
+    background: main-text-color($primary-color);
     margin: 0 0 0.4rem 0;
     @include transition(0.5s);
   }
@@ -84,7 +84,7 @@
       height: 200px;
       background: url(../img/man.jpg) center center/cover;
       border-radius: 50%;
-      border: 3px solid $secondary-color;
+      border: 3px solid secondary-text-color($primary-color);
       opacity: 0;
       transition: opacity 0.4s ease-in;
       transition-delay: 0.3s;
@@ -107,11 +107,11 @@
     }
 
     &.current > a {
-      color: $secondary-color;
+      color: secondary-text-color($primary-color);
     }
 
     & > a:hover {
-      color: $secondary-color;
+      color: secondary-text-color($primary-color);
       @include transition;
     }
   }
