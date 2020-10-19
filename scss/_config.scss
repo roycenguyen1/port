@@ -24,3 +24,26 @@ $background-opacity: 0.9;
 .sm-heading {
   font-size: 1.2rem;
 }
+
+// Media Queries mixin
+
+@mixin mediaSm {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
