@@ -1,3 +1,7 @@
+img {
+  width: 100%;
+}
+
 .lg-heading {
   font-size: 4rem;
 }
@@ -187,7 +191,7 @@ body#bg-image {
   background: url(../img/background.jpg) no-repeat center center/cover;
 }
 
-body::after {
+body#bg-image::after {
   content: "";
   position: absolute;
   top: 0;
@@ -231,17 +235,7 @@ header {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 2rem;
 }
 
@@ -261,6 +255,88 @@ main .icons a:hover {
 
 main#home {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#about {
+  padding: 5rem;
+  background: rgba(6, 29, 44, 0.9);
+}
+
+.about-info {
+  margin-top: 2rem;
+  letter-spacing: 0.07rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2rem;
+      grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.about-info .bio-image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: bioimage;
+  border-radius: 50%;
+  border: 3px #fad02c solid;
+  width: 70%;
+  margin: auto;
+}
+
+.about-info .bio {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: bio;
+  font-size: 1.3rem;
+}
+
+.about-info .job1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: job1;
+}
+
+.about-info .job2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: job2;
+}
+
+.about-info .job3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: job3;
+}
+
+.about-info .job {
+  background: #051a28;
+  padding: 1rem;
+  border-bottom: 3px solid #fad02c;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  background: #051a28;
+  color: #fad02c;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  padding: 1rem 0;
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (max-width: 768px) {
