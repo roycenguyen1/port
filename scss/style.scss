@@ -13,17 +13,6 @@ body {
   font-family: $main-font;
   line-height: 1.5;
   position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: rgba($primary-color, $background-opacity);
-  }
 }
 
 // Headings
@@ -59,10 +48,6 @@ header {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
   padding: 0 2rem;
 
   .icons {
@@ -79,7 +64,74 @@ main {
   }
 
   &#home {
+    height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+// About Page
+#about {
+  padding: 4rem;
+  background: rgba($primary-color, $background-opacity);
+  min-height: calc(100vh - 56px);
+}
+.about-info {
+  margin-top: 2rem;
+  letter-spacing: 0.07rem;
+
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    border-radius: 50%;
+    border: 3px secondary-text-color($primary-color) solid;
+    margin: auto;
+    width: 80%;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.3rem;
+  }
+
+  .job1 {
+    grid-area: job1;
+  }
+
+  .job2 {
+    grid-area: job2;
+  }
+
+  .job3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($primary-color, 1);
+    padding: 1rem;
+    border-bottom: 3px solid $secondary-color;
+  }
+}
+
+footer {
+  margin: 0;
+  padding: 1rem;
+  background: darken($primary-color, 1);
+  color: secondary-text-color($primary-color);
+  text-align: center;
+
+  p {
+    margin: 0;
+    padding: 1rem 0;
+    letter-spacing: 0.1rem;
   }
 }
 
