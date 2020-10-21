@@ -49,6 +49,7 @@ header {
 
 main {
   padding: 0 2rem;
+  // background: rgba($primary-color, $background-opacity);
 
   .icons {
     margin-top: 0.5rem;
@@ -88,36 +89,60 @@ main {
     "bioimage bio bio"
     "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr);
+}
 
-  .bio-image {
-    grid-area: bioimage;
-    border-radius: 50%;
-    border: 3px secondary-text-color($primary-color) solid;
-    margin: auto;
-    width: 80%;
-  }
+.bio-image {
+  grid-area: bioimage;
+  border-radius: 50%;
+  border: 3px secondary-text-color($primary-color) solid;
+  margin: auto;
+  width: 80%;
+}
 
-  .bio {
-    grid-area: bio;
-    font-size: 1.3rem;
-  }
+.bio {
+  grid-area: bio;
+  font-size: 1.3rem;
+}
 
-  .job1 {
-    grid-area: job1;
-  }
+.job1 {
+  grid-area: job1;
+}
 
-  .job2 {
-    grid-area: job2;
-  }
+.job2 {
+  grid-area: job2;
+}
 
-  .job3 {
-    grid-area: job3;
-  }
+.job3 {
+  grid-area: job3;
+}
 
-  .job {
-    background: lighten($primary-color, 1);
-    padding: 1rem;
-    border-bottom: 3px solid $secondary-color;
+.job {
+  background: darken($primary-color, 1);
+  padding: 1rem;
+  border-bottom: 4px solid secondary-text-color($primary-color);
+}
+// Portfolio Page
+#portfolio {
+  background: rgba($primary-color, $background-opacity);
+  min-height: calc(100vh - 56px);
+  padding-bottom: 4rem;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    object-fit: cover;
+    height: 200px;
+    border: 3px solid #fff;
+
+    &:hover {
+      border-color: secondary-text-color($primary-color);
+      opacity: 0.7;
+      @include transition;
+    }
   }
 }
 

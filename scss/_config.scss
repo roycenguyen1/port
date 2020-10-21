@@ -1,5 +1,5 @@
 // Recommend primary color for light theme
-// $primary-color: #f5f5f5;
+// $primary-color: #d3d3d3;
 
 $primary-color: #061d2c;
 $secondary-color: #fad02c;
@@ -9,6 +9,23 @@ $main-font: "Roboto", sans-serif;
 $show-home-image: true;
 $home-image: url(../img/background.jpg) no-repeat center center/cover;
 $background-opacity: 0.9;
+
+// Light/Dark Mode
+@function main-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #05445e;
+  } @else {
+    @return #fff;
+  }
+}
+
+@function secondary-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #43a6e7;
+  } @else {
+    @return #fad02c;
+  }
+}
 
 @mixin transition($time: 0.4s) {
   transition: all $time ease-out;
@@ -45,21 +62,32 @@ img {
   font-size: 1.2rem;
 }
 
-// Light/Dark Mode
-@function main-text-color($color) {
-  @if (lightness($color) > 40) {
-    @return #05445e;
-  } @else {
-    @return #fff;
+.fas {
+  font-weight: normal;
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: secondary-text-color($primary-color);
+    color: main-text-color($secondary-color);
   }
 }
 
-@function secondary-text-color($color) {
-  @if (lightness($color) > 40) {
-    @return #43a6e7;
-  } @else {
-    @return #fad02c;
-  }
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: main-text-color($primary-color);
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
 }
 
 // Media Queries mixin
