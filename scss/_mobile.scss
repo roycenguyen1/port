@@ -130,8 +130,10 @@
   }
 
   .boxes {
-    span {
-      display: none;
+    .box-1 {
+      span {
+        display: none;
+      }
     }
   }
 }
