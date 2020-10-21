@@ -38,6 +38,42 @@
     padding: 1rem 1rem 0 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .boxes {
+    position: static;
+    display: grid;
+    grid-template-areas:
+      "box2"
+      "box1";
+
+    .box-1,
+    .box-2 {
+      position: static;
+      padding: 0;
+      margin: 0;
+      z-index: 0;
+      transform: none;
+      width: 100%;
+      border-radius: 0;
+      border: none;
+    }
+
+    .box-1 {
+      grid-area: box1;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .box-2 {
+      grid-area: box2;
+
+      div {
+        border: 2px solid #fff;
+        width: 100%;
+        padding: 0.5rem 0;
+      }
+    }
+  }
 }
 
 // Smartphones
@@ -91,5 +127,11 @@
   .projects {
     padding: 1rem 1rem 0 1rem;
     grid-template-columns: 1fr;
+  }
+
+  .boxes {
+    span {
+      display: none;
+    }
   }
 }

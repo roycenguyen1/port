@@ -49,7 +49,9 @@ header {
 
 main {
   padding: 0 2rem;
-  // background: rgba($primary-color, $background-opacity);
+  padding-bottom: 4rem;
+  background: rgba($primary-color, $background-opacity);
+  min-height: calc(100vh - 56px);
 
   .icons {
     margin-top: 0.5rem;
@@ -63,22 +65,18 @@ main {
       }
     }
   }
-
-  &#home {
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+}
+#home {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
 }
 
 // About Page
-#about {
-  padding: 4rem;
-  background: rgba($primary-color, $background-opacity);
-  min-height: calc(100vh - 56px);
-}
+
 .about-info {
   margin-top: 2rem;
   letter-spacing: 0.07rem;
@@ -122,11 +120,6 @@ main {
   border-bottom: 4px solid secondary-text-color($primary-color);
 }
 // Portfolio Page
-#portfolio {
-  background: rgba($primary-color, $background-opacity);
-  min-height: calc(100vh - 56px);
-  padding-bottom: 4rem;
-}
 
 .projects {
   display: grid;
@@ -142,6 +135,52 @@ main {
       border-color: secondary-text-color($primary-color);
       opacity: 0.7;
       @include transition;
+    }
+  }
+}
+
+// Contact Page
+.boxes {
+  width: 90%;
+  min-height: 80vh;
+  margin: 2rem auto;
+  position: relative;
+  .box-1,
+  .box-2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #fff;
+    border-radius: 2rem;
+  }
+
+  .box-1 {
+    top: 50%;
+    transform: translateY(-50%);
+    background: darken($primary-color, 1);
+    padding: 2rem 5rem;
+    z-index: 1;
+
+    a {
+      display: inline-block;
+      margin: 1rem 0;
+      font-size: 1.3rem;
+    }
+  }
+
+  .box-2 {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 80%;
+    text-align: center;
+
+    div {
+      margin: 1.5rem 0;
+      font-size: 1.4rem;
+      padding: 0 2rem;
     }
   }
 }
